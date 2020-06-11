@@ -39,7 +39,7 @@ class ventas : AppCompatActivity() {
         HiloPublicaciones.start()
         HiloPublicaciones.join()
         var publicaciones = ArrayList<Publicacion>()
-        publicaciones.add(Publicacion("Casa Bonita",1500.0))
+        //publicaciones.add(Publicacion("Casa Bonita",1500.0))
         if (publicacionesRoom?.size!! > 0) {
             publicacionesRoom!!.forEach {
                 if(it.Vendida == false) {
@@ -83,7 +83,7 @@ class ventas : AppCompatActivity() {
                     HiloPublicaciones.start()
                     HiloPublicaciones.join()
                     publicaciones = ArrayList<Publicacion>()
-                    publicaciones.add(Publicacion("Casa Bonita",1500.0))
+                    //publicaciones.add(Publicacion("Casa Bonita",1500.0))
                     if (publicacionesRoom?.size!! > 0) {
                         publicacionesRoom!!.forEach {
                             if(it.Vendida == false) {
