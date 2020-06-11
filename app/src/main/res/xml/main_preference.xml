@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:title="alertas" app:isPreferenceVisible="false">
+
+        <Preference
+            android:key="text"
+            android:title="notifi"
+            />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="general">
+    <SwitchPreferenceCompat
+        android:key="switch_preference"
+        android:title="Notificaciones"
+        android:summary="Uso de la aplicacion"/>
+        <MultiSelectListPreference
+            android:key="multi_select_preference"
+            android:title="auto_play"
+            app:isPreferenceVisible="false"
+            android:summary="enabled"
+            android:entries="@array/auto_play_entries"
+            app:entryValues="@array/entry_values"
+            android:dialogTitle="auto_play"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="expandable"
+        android:title="display"
+        app:isPreferenceVisible="false"
+        app:initialExpandedChildrenCount="1">
+        <SeekBarPreference
+            android:key="seekbar_preference"
+            android:title="Nivel de Brillo"
+            android:summary="value_porcentage"/>
+        <Preference
+            android:key="intent_preference"
+            android:title="wallpaper"
+            android:summary="change_wallpaper"
+            />
+        <DropDownPreference
+            android:key="drop_down_preference"
+            android:title="device_theme"
+            android:summary="automatic"
+            android:entries="@array/theme_entries"
+            android:entryValues="@array/entry_values"/>
+    </PreferenceCategory>
+</PreferenceScreen>

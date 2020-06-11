@@ -1,9 +1,11 @@
 package com.example.pruebacamerax
 
+import android.Manifest
 import android.app.Activity
 import android.content.ContentResolver
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.icu.text.DateFormat
 import android.icu.text.SimpleDateFormat
@@ -20,8 +22,12 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
 import androidx.core.app.AppLaunchChecker
+import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import com.example.pruebacamerax.GlobalUser.Companion.datosReg
+import com.example.pruebacamerax.GlobalUser.Companion.fileNameReg
 import com.example.pruebacamerax.entidades.UsuarioEntity
 import com.example.pruebacamerax.fragments.CameraFragment.Companion.URI_PROFILE
 import com.example.pruebacamerax.roomdb.DBAppTec
@@ -60,7 +66,19 @@ class Registro_Activity : AppCompatActivity() {
         btnRegistrar.setOnClickListener {
             Registrar()
         }
-        var options = getContacts()
+
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
+            != PackageManager.PERMISSION_GRANTED) {
+
+                    ActivityCompat.requestPermissions(this,
+                        arrayOf(Manifest.permission.READ_CONTACTS),
+                        123445)
+    } else {
+        // Permission has already been granted
+    }
+
+       var options = getContacts()
         spTelefono.adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,options)
         spTelefono.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -173,6 +191,7 @@ class Registro_Activity : AppCompatActivity() {
         usuarioNuevo.Vendedor       = ckOfertar.isChecked
         usuarioNuevo.ImagenPerfil   =  URI_PROFILE.toString() //variable global
         Thread {
+
             DBAppTec.get(application).getUsuarioDAO().InsertUsuario(usuarioNuevo)
             DBAppTec.get(application).getUsuarioDAO().getAllUsuario().forEach {
                 Log.d("agregado", "Correo : ${it.Correo}")
@@ -186,7 +205,15 @@ class Registro_Activity : AppCompatActivity() {
         //Guardar informacion en memoria interna
         var info = usuarioNuevo.Correo +"\n"+ usuarioNuevo.Nombre + "\n" + usuarioNuevo.Password +
                 "\n" + usuarioNuevo.Apellido + "\n" + usuarioNuevo.Vendedor.toString() +"\n"+ usuarioNuevo.Telefono
-        GuardarInformacion(info,usuarioNuevo.Correo)
+
+        datosReg = info
+        fileNameReg = usuarioNuevo.Correo
+        val intentService = Intent(this,MyService::class.java)
+        //intent.putExtra("datos",info)
+        //intent.putExtra("fileName",usuarioNuevo.Correo)
+        startService(intentService)
+
+        //GuardarInformacion(info,usuarioNuevo.Correo)
         //notifica usuario registrado
         Toast.makeText(this,"Usuario Registrado", Toast.LENGTH_SHORT).show()
        AbrirLogin()

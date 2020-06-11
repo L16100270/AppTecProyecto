@@ -7,48 +7,98 @@
     tools:context=".CuentaActivity">
 
     <ImageView
-        android:id="@+id/ivFotoPerfil"
-        android:layout_width="159dp"
-        android:layout_height="126dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="28dp"
+        android:id="@+id/ivFotoPerfilU"
+        android:layout_width="242dp"
+        android:layout_height="192dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="112dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/profile_default" />
 
     <TextView
-        android:id="@+id/tvNombreCuenta"
-        android:layout_width="200dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="28dp"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ivFotoPerfil"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtCorreoCuenta"
-        android:layout_width="200dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ivFotoPerfil"
-        app:layout_constraintTop_toBottomOf="@+id/tvNombreCuenta" />
+        android:id="@+id/etCorreoU"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="31dp"
+        android:text="Correo Electronico"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivFotoPerfilU" />
 
     <EditText
-        android:id="@+id/etTelefonoCuenta"
-        android:layout_width="200dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
+        android:id="@+id/etNombreU"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="15dp"
         android:ems="10"
+        android:hint="Nombre"
+        android:inputType="textPersonName"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCorreoU" />
+
+    <EditText
+        android:id="@+id/etContraU"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etApellidosU" />
+
+    <EditText
+        android:id="@+id/etTelefonoU"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Telefono"
         android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ivFotoPerfil"
-        app:layout_constraintTop_toBottomOf="@+id/txtCorreoCuenta" />
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etContraU" />
+
+    <EditText
+        android:id="@+id/etApellidosU"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="Apellidos"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNombreU" />
+
+    <Button
+        android:id="@+id/btnActualizaU"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="52dp"
+        android:background="#52CAFA"
+        android:text="A C T U A L I Z A R"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="36dp"
+        android:text="Cuenta"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,7 @@
 package com.example.pruebacamerax.dao
 
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.pruebacamerax.entidades.UsuarioEntity
 
 @Dao
@@ -18,4 +15,7 @@ interface UsuarioDAO {
 
     @Query("SELECT * FROM UsuarioEntity")
     fun getAllUsuario(): List<UsuarioEntity>
+
+    @Update
+    fun updateUsuario(usuario: UsuarioEntity)
 }

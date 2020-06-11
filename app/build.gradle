@@ -103,4 +103,15 @@ dependencies {
 
     // Test helpers
     testImplementation "androidx.room:room-testing:$room_version"
+
+    //jetpack- preference
+    def preference_version = "1.1.1"
+    implementation "androidx.preference:preference-ktx:$preference_version"
+
+    //dependencias retrofit
+
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
+
 }

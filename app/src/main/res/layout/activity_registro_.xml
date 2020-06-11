@@ -77,6 +77,7 @@
         android:layout_width="371dp"
         android:layout_height="48dp"
         android:layout_marginBottom="24dp"
+        android:background="#52CAFA"
         android:text="R E G I S T R A R"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

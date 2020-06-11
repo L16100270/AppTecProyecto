@@ -83,6 +83,7 @@ class LoginFragment : Fragment() {
         }
         HiloLogin.start()
         HiloLogin.join()
+
         if( usuarioLogin == null){
             Toast.makeText(activity,"Este correo no se ha registrado", Toast.LENGTH_SHORT).show()
             return
@@ -106,7 +107,8 @@ class LoginFragment : Fragment() {
         startActivity(intent)
     }
     fun AbrirCuenta(){
-        val intent = Intent(activity, CuentaActivity::class.java)
+        val intent = Intent(activity, ventas::class.java)
+       // val intent = Intent(activity, CuentaActivity::class.java)
         startActivity(intent)
     }
     fun AbrirScrollVendedor(){

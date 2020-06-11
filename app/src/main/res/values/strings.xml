@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PruebaCameraX</string>
+    <string name="app_name">APPTec</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -25,4 +25,22 @@
     <string name="delete_dialog">Delete current photo?</string>
     <string name="delete_title">Confirm</string>
     <string name="title_activity_nav_main">NavMain</string>
+
+    <string-array name="auto_play_entries">
+        <item>enabled</item>
+        <item>disabled</item>
+        <item>wifi_only</item>
+    </string-array>
+
+    <string-array name="entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="theme_entries">
+        <item>automatic</item>
+        <item>light</item>
+        <item>dark</item>
+    </string-array>
 </resources>
