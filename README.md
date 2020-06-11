@@ -4,7 +4,7 @@ Se utiliza en muchas partes de la aplicacion, practicamente para entrar a cualqu
 pasa a la siguiente Activity
 
 # Intencion Implicita
-En Ventana de Compra se puede contactar por llamada a quin realizo la publicacion con intencion implicita
+En Ventana de Compra se puede contactar por llamada a quien realizo la publicacion con intencion implicita
 
 # Menu
 Se utiliza un menu tipo options, y un menu popup para cada elemento dentro del recycler view de publicaciones
